@@ -16,15 +16,15 @@ export default async function HomePage() {
 
   return (
       <section className="flex flex-col justify-center">
-        <div className="flex flex-col justify-center text-center py-8 md:py-10 mx-auto">
-          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500">
+        <div className="flex flex-col justify-center items-center py-8 md:py-10 mx-auto">
+          <h1 className="text-4xl text-center md:text-5xl font-extrabold tracking-tight mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500">
             {`Unveiling AI's Inner Workings`}
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-center text-muted-foreground mb-8 max-w-2xl mx-auto">
             Explore a curated collection of system prompts from leading AI models. Discover the instructions that shape AI behavior.
           </p>
           {/* The Search input will be part of the Client Component */}
-        <FuseSearchPrompts className='max-w-xl' allModelGroups={allInitialData} inputClassName='h-12'  placeholder="Search prompts for Claude, ChatGpt, Grok, Gemini ..."/>
+        <FuseSearchPrompts className='w-full mx-auto' allModelGroups={allInitialData} inputClassName='h-12'  placeholder="Search prompts for Claude, ChatGpt, Grok, Gemini ..."/>
       </div>
 
       {/* Latest Prompts Section */}
