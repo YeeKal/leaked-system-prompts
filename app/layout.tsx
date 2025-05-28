@@ -52,7 +52,7 @@ export default function RootLayout({
       />
       </>
       )}
-        {process.env.UMAMI_ID && isProduction && (
+        {process.env.UMAMI_ID  && (
            <Script
             defer
             src="https://umami-j91g.onrender.com/script.js"
