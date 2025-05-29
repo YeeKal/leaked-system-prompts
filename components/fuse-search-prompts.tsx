@@ -152,7 +152,7 @@ export function FuseSearchPrompts({
                       {prompt.model || prompt.company_id}
                     </p>
                     <p className="text-xs text-muted-foreground truncate">
-                      {prompt.company_id || 'Unknown'}
+                      {prompt.company || 'Unknown'}
                     </p>
                   </div>
                   <span className="ml-3 text-xs text-muted-foreground whitespace-nowrap">
