@@ -58,7 +58,7 @@ export default async function HomePage() {
     {/* Company Filter Section */}
       <section className="w-full flex flex-col justify-center mb-8 py-6 bg-gradient-to-r from-card/90 via-card to-card/90 border border-border rounded-lg shadow-lg mx-auto">
         <h2 className="text-3xl font-bold text-primary mb-6 text-center">Browse by Company</h2>
-        <div className="flex flex-wrap justify-center gap-3">
+        <div className="flex flex-wrap justify-center gap-3 p-2">
           {allInitialData.map(company => (
             <Link prefetch={false} href={`/#${company.company_id}`} key={company.company_id}>
             <Button

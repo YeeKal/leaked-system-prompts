@@ -108,14 +108,14 @@ export default function PromptDisplayClient({ initialData }: PromptDisplayClient
                   </CollapsibleContent>
                   <CollapsibleTrigger className='w-full'>{
                     group.promptDatas.length >  DefaultShowLinks && (
-                      <Button
-                      variant='ghost'
-                      className='py-1'
+                      // add ghost effect to this div
+                      <div
+                      className='flex items-center justify-center gap-2 py-1 hover:bg-muted/50 transition-colors duration-200'
                       >
                         <span>Show</span>
                         <ChevronsUpDown className="w-4 h-4 text-muted-foreground  "/>
                         <span className="sr-only">Toggle</span>
-                        </Button>
+                        </div>
                         
                     )
                   }</CollapsibleTrigger>
