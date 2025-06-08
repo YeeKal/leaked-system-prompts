@@ -14,7 +14,7 @@ interface SidebarProps {
 // Helper to format date concisely
 const formatDateShort = (dateStr?: string) => {
   if (!dateStr) return '';
-  return new Date(dateStr).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+  return new Date(dateStr).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric',timeZone: 'UTC'  });
 };
 
 export default function Sidebar({
@@ -44,7 +44,7 @@ export default function Sidebar({
       {/* Search Section (Placeholder) */}
       <div>
         <h3 className="text-lg font-semibold mb-3 text-foreground">Search Prompts</h3>
-          <FuseSearchPrompts allModelGroups={allPromptsData} inputClassName="h-10" className="hidden lg:block"/>
+          <FuseSearchPrompts allModelGroups={allPromptsData} inputClassName="h-10"/>
       </div>
 
       {/* More from this Company Section */}
@@ -83,7 +83,9 @@ export default function Sidebar({
                     <div className="text-sm font-medium text-foreground group-hover:text-primary-accent transition-colors truncate">
                       {prompt.companyDisplayName} - {prompt.model || 'Update'}
                     </div>
-                    
+                    <div className="text-xs text-muted-foreground truncate" title={prompt.title}>
+                      {prompt.title ? (prompt.title.length > 40 ? prompt.title.substring(0, 37) + '...' : prompt.title) : 'View Prompt'}
+                    </div>
                     <div className="text-xs text-muted-foreground">{formatDateShort(prompt.date)}</div>
                   </div>
                 </Link>

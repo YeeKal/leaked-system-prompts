@@ -11,7 +11,6 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible"
-import { Button } from './ui/button';
 
 // Interface for enriched prompt data for search results
 export interface EnrichedPromptData extends PromptData {
