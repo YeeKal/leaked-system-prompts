@@ -6,7 +6,6 @@ title: Claude Design System Prompt
 description: The leaked Claude Design system prompt at April 17, 2026.
 seo_title: Claude Design System Prompt leaked at (2026-04-17)
 seo_description: View Claude Design system prompt leaked on 2026-04-17.
-source: https://github.com/elder-plinius/CL4R1T4S/commit/7a0e89a34f4fe9ffb174414d33214d4363e6b511
 ---
 
 ```markdown
