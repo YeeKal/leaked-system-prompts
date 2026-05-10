@@ -1,7 +1,7 @@
 ---
 company: Anthropic
 model: Claude 4.1
-date: 2026-03-01
+date: 2026-02-01
 title: Claude 4.1 System Prompt
 description: The leaked Claude 4.1 system prompt at March 01, 2026.
 seo_title: Claude 4.1 System Prompt leaked at (2026-03-01)

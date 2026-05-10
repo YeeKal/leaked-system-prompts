@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { BrainCircuit } from 'lucide-react'; // Example icon
+import { BrainCircuit, ExternalLink} from 'lucide-react'; // Example icon
+import { Button } from './ui/button';
 
 export default function Header() {
   return (
@@ -10,6 +11,15 @@ export default function Header() {
           Leaked System Prompts
         </Link>
         {/* Future navigation items can go here */}
+        
+
+        <Link href="https://github.com/YeeKal/leaked-system-prompts" target='_blank' className='text-2xl'>
+            <Button variant="default">GitHub
+              <ExternalLink/>
+            </Button>
+            
+             {/* <img alt="GitHub stars" src="https://img.shields.io/github/stars/YeeKal/leaked-system-prompts?style=social"></img> */}
+          </Link>
       </div>
     </header>
   );

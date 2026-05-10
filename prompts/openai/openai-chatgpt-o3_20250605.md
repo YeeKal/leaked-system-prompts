@@ -3,7 +3,7 @@ company: OpenAI
 model: ChatGPT O3
 date: 2025-06-05
 title: ChatGPT O3 System Prompt
-description: The leaked ChatGPT O3o system prompt at June 05, 2024.
+description: The leaked ChatGPT O3 system prompt at June 05, 2024.
 seo_title: ChatGPT O3 System Prompt leaked at (2024-06-05)
 seo_description: View ChatGPT O3 system prompt leaked on 2024-06-05.
 ---

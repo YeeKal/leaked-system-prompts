@@ -1,10 +1,14 @@
-import { getPromptData, getAllPromptData, getAllPromptPaths } from '@/lib/prompts'; // Adjust path
-import { notFound } from 'next/navigation';
-import { Metadata } from 'next';
-import Link from 'next/link';
-import { Home, ChevronRight } from 'lucide-react';
-import Sidebar from '@/components/sidebar'; // Import the Sidebar
-import {FuseSearchPrompts} from '@/components/fuse-search-prompts';
+import {
+  getPromptData,
+  getAllPromptData,
+  getAllPromptPaths,
+} from "@/lib/prompts"; // Adjust path
+import { notFound } from "next/navigation";
+import { Metadata } from "next";
+import Link from "next/link";
+import { Home, ChevronRight } from "lucide-react";
+import Sidebar from "@/components/sidebar"; // Import the Sidebar
+import { FuseSearchPrompts } from "@/components/fuse-search-prompts";
 
 // Define the shape of the params object
 interface Params {
@@ -20,23 +24,28 @@ interface PromptPageProps {
 // generateStaticParams returns an array of Params objects
 export async function generateStaticParams(): Promise<Params[]> {
   const paths = await getAllPromptPaths();
-  return paths.map(p => p.params);
+  return paths.map((p) => p.params);
 }
 
 // Handle params as a Promise in generateMetadata
-export async function generateMetadata({ params }: PromptPageProps): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: PromptPageProps): Promise<Metadata> {
   const { company_id, slug } = await params; // Await the params Promise
   const prompt = await getPromptData(company_id, slug);
 
   if (!prompt) {
     return {
-      title: 'Prompt Not Found',
+      title: "Prompt Not Found",
     };
   }
 
   return {
-    title: prompt.seo_title || prompt.title || 'System Prompt',
-    description: prompt.seo_description || prompt.description || 'Leaked system prompt details.',
+    title: prompt.seo_title || prompt.title || "System Prompt",
+    description:
+      prompt.seo_description ||
+      prompt.description ||
+      "Leaked system prompt details.",
   };
 }
 
@@ -44,11 +53,10 @@ export async function generateMetadata({ params }: PromptPageProps): Promise<Met
 export default async function PromptPage({ params }: PromptPageProps) {
   const { company_id, slug } = await params; // Await the params Promise
 
-
-   // Fetch current prompt AND all prompt data for sidebar recommendations
-   const [currentPrompt, allPromptsData] = await Promise.all([
+  // Fetch current prompt AND all prompt data for sidebar recommendations
+  const [currentPrompt, allPromptsData] = await Promise.all([
     getPromptData(company_id, slug),
-    getAllPromptData() // Fetches all ModelGroupData
+    getAllPromptData(), // Fetches all ModelGroupData
   ]);
 
   if (!currentPrompt) {
@@ -56,16 +64,19 @@ export default async function PromptPage({ params }: PromptPageProps) {
   }
 
   const formatDate = (dateStr?: string) => {
-    if (!dateStr) return 'N/A';
-    return new Date(dateStr).toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
+    if (!dateStr) return "N/A";
+    return new Date(dateStr).toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+      timeZone: "UTC",
     });
   };
 
-  const companyDisplay = currentPrompt.company?.replace('-', ' ') || currentPrompt.company_id.replace('-', ' ');
-  const modelDisplay = currentPrompt.model || 'Prompt';
+  const companyDisplay =
+    currentPrompt.company?.replace("-", " ") ||
+    currentPrompt.company_id.replace("-", " ");
+  const modelDisplay = currentPrompt.model || "Prompt";
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -74,7 +85,10 @@ export default async function PromptPage({ params }: PromptPageProps) {
         <main className="lg:col-span-8 xl:col-span-9 space-y-6">
           {/* Breadcrumbs */}
           <nav className="text-sm text-muted-foreground flex items-center space-x-1">
-            <Link href="/" className="hover:text-primary-accent hover:underline flex items-center">
+            <Link
+              href="/"
+              className="hover:text-primary-accent hover:underline flex items-center"
+            >
               <Home size={14} className="mr-1" /> Home
             </Link>
             <ChevronRight size={14} />
@@ -84,16 +98,24 @@ export default async function PromptPage({ params }: PromptPageProps) {
           </nav>
 
           <div className="">
-              <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight text-foreground mb-2">
-                {currentPrompt.title || 'System Prompt'}
-              </h1>
-              <div className="text-muted-foreground space-y-1 text-sm">
-                <p> {currentPrompt.company || 'N/A'}:{currentPrompt.model || 'N/A'}</p>
-                <p><strong>Leaked Date:</strong> {formatDate(currentPrompt.date)}</p>
-              </div>
-          <FuseSearchPrompts allModelGroups={allPromptsData} inputClassName='h-12' className='lg:hidden pt-6'/>
+            <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight text-foreground mb-2">
+              {currentPrompt.title || "System Prompt"}
+            </h1>
+            <div className="text-muted-foreground space-y-1 text-sm">
+              <p>
+                {" "}
+                {currentPrompt.company || "N/A"}:{currentPrompt.model || "N/A"}
+              </p>
+              <p>
+                <strong>Leaked Date:</strong> {formatDate(currentPrompt.date)}
+              </p>
             </div>
-
+            <FuseSearchPrompts
+              allModelGroups={allPromptsData}
+              inputClassName="h-12"
+              className="lg:hidden pt-6"
+            />
+          </div>
 
           {/* Prompt Article */}
           <article className="bg-card p-4 rounded-lg shadow-md">

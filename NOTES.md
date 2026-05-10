@@ -15,10 +15,10 @@ page seo:
 blog seo:
 
 - leak / leaked / leakage
-- leakage strategy : https://baoyu.io/blog/how-i-cracked-notebooklm-prompts, https://github.com/LouisShark/chatgpt_system_prompt
+- leakage strategy : https://baoyu.io/blog/how-i-cracked-notebooklm-prompts, https://github.com/LouisShark/chatgpt_system_prompt  https://gist.github.com/lucasmrdt/4215e483257e1d81e44842eddb8cc1b3
 - stitch system prompts
 - about claude system prompts: https://simonwillison.net/2025/May/25/claude-4-system-prompt/#the-missing-prompts-for-tools
-- analyse prompt system(解析提示词)
+- analyse prompt system(解析提示词): https://simonwillison.net/2025/May/25/claude-4-system-prompt/
 - reddit  post: https://www.reddit.com/r/LocalLLaMA/comments/1kfkg29/claude_full_system_prompt_with_all_tools_is_now/
 
 ## relative project
@@ -30,6 +30,7 @@ blog seo:
 - [systemprompts](https://systemprompts.featurebase.app/roadmap)
 - [jules-awesome-list](https://github.com/google-labs-code/jules-awesome-list)
 - [CL4R1T4S](https://github.com/elder-plinius/CL4R1T4S/tree/main)
+- [TheBigPromptLibrary](https://github.com/0xeb/TheBigPromptLibrary)
 
 ## design pages prompt
 
