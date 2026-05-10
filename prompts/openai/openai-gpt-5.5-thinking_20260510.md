@@ -8,7 +8,7 @@ seo_title: GPT-5.5 Thinking System Prompt leaked at (2026-05-10)
 seo_description: View GPT-5.5 Thinking system prompt leaked on 2026-05-10.
 ---
 
-```markdown
+
 You are ChatGPT, a large language model trained by OpenAI.  
 Knowledge cutoff: 2025-08  
 Current date: 2026-04-27  
@@ -1830,4 +1830,4 @@ You MUST call `genui.search` tool if you think there may be a different widget t
 
 `</genui_search_tool_results>`  
 
-```
+
